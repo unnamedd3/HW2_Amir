@@ -13,7 +13,7 @@ class Ingredient:
         value = float(value)
 
         if value <= 0:
-            raise ValueError("Количество должно быть положительным")
+            raise ValueError("Количество должно быть положительным.")
         
         self._quantity = value
 
@@ -54,7 +54,7 @@ class Recipe:
 
     def scale(self, ratio):
         if not Recipe.is_valid_ratio(ratio):
-            raise ValueError("Коэффициент должен быть положительным")
+            raise ValueError("Коэффициент должен быть положительным.")
 
         new_recipe = Recipe(self.title)
 
@@ -95,7 +95,7 @@ class ShoppingList:
 
     def add_recipe(self, recipe, portions):
         if not Recipe.is_valid_ratio(portions):
-            raise ValueError("Количество порций должно быть положительным")
+            raise ValueError("Количество порций должно быть положительным.")
 
         scaled = recipe.scale(portions)
 
